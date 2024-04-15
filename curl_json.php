@@ -24,12 +24,7 @@ curl_setopt($curl, CURLOPT_POSTFIELDS, $json_string);
 curl_setopt($curl, CURLOPT_HTTPHEADER, array('Content: application/json'));
 curl_setopt($curl, CURLOPT_RETURNTRANSFER, true);
 
+//exécute la session cURL 
 $data = curl_exec($curl);
 
-curl_close($curl);
-
-// exécute la session cURL
-curl_exec($curl);
-
-// ferme la session cURL
 curl_close($curl);

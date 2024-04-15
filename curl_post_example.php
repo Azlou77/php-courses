@@ -18,12 +18,12 @@ $fields = array(
 
 $fields_string = http_build_query($fields);
  
+// options de la session cURL
 curl_setopt($curl, CURLOPT_URL, $url);
-
 curl_setopt($curl, CURLOPT_POST, TRUE);
-
 curl_setopt($curl, CURLOPT_POSTFIELDS, $fields_string);
 
+//exécute la session cURL 
 $data = curl_exec($curl);
 
 // ferme la session cURL
