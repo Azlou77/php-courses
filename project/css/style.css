@@ -1,0 +1,21 @@
+/* navigation */
+.navbar-expand-lg{
+    margin-left: 8%;
+    
+}
+a.navbar-brand, .btn.btn-white.dropdown-toggle{
+    font-size: 20px;
+}
+/* list to watch */
+h2{
+    font-size: 30px;
+}
+.col{
+    display: flex;
+    flex-direction: row;
+}
+.card{
+    margin: 10px;
+    width: 100%;
+    height: 100%;
+}
