@@ -3,7 +3,7 @@
     <body>
         <?php include 'partials/navigation.php'; ?>
         <div class="container center">
-        <h2 class="d-flex justify-content-center"> My fantastic series </h2>
+        <h2 class="d-flex justify-content-center"> My actor serie</h2>
         <div class="row">
             <div class="col">
                 <br>
@@ -18,7 +18,7 @@
                 curl_setopt($curl, CURLOPT_RETURNTRANSFER, true);
 
                 // Send the request
-                $authorization = "Authorization: Bearer {token}";
+                $authorization = "Authorization: Bearer {token}]";
                 curl_setopt($curl, CURLOPT_HTTPHEADER, array('Content-type: application /json', $authorization));
 
                 //Execute the curl session

@@ -28,6 +28,17 @@
                 <li><a class="dropdown-item" href="#">Series Mangas</a></li>
                 <li><a class="dropdown-item" href="#">Series actors</a></li>
             </ul>
+            
+
+            
         </div>
+        <form class="form-inline my-2 my-lg-0">
+            <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+            <!--  Icon search -->
+            <button class="btn btn-outline-success my-2 my-sm-0" type="submit"><i class="fas fa-search"></i></button>
+            
+        </form>
+        
 </nav>
+
 <!-- End Navigation -->
