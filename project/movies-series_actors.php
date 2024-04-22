@@ -50,7 +50,7 @@
                 
                 $filmography = $value['known_for'];
 
-                // Loop through the movies and display their titles
+                // Loop through the movies/series and display their titles
                 foreach ($filmography as $entry) {
                     if ($entry['media_type'] == 'movie') {
                         $title = $entry['title'];
