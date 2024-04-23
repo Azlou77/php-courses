@@ -3,7 +3,7 @@
     margin-left: 8%;
     
 }
-a.navbar-brand, .btn.btn-white.dropdown-toggle{
+a.navbar-brand, .btn.btn-white.dropdown-toggle, .navbar-expand-lg .navbar-nav .nav-link{
     font-size: 20px;
 }
 /* list to watch */

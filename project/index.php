@@ -12,7 +12,7 @@
                 $curl = curl_init();
 
                 //Get the list series-movies to watch
-                curl_setopt($curl, CURLOPT_URL, 'https://api.themoviedb.org/3/account/{id_account}/favorite/movies?language=en-US&page=1&sort_by=created_at.asc');
+                curl_setopt($curl, CURLOPT_URL, 'https://api.themoviedb.org/3/account/account_id/favorite/movies?language=en-US&page=1&sort_by=created_at.asc');
 
                 // Avoid to display errors
                 curl_setopt($curl, CURLOPT_RETURNTRANSFER, true);
