@@ -15,7 +15,9 @@
                 <li><a class="dropdown-item" href="/project/movies_historic.php">Movies historic</a></li>
                 <li><a class="dropdown-item" href="/project/movies_fantastic.php">Movies fantastic</a></li>
                 <li><a class="dropdown-item" href="#">Movies actors</a></li>
+
             </ul>
+            
         </div>
 
         <!-- Series -->
@@ -25,19 +27,15 @@
             </button>
             <ul class="dropdown-menu">
                 <li><a class="dropdown-item" href="/project/series_fantastic.php">Series fantastic</a></li>
-                <li><a class="dropdown-item" href="#">Series Mangas</a></li>
-                <li><a class="dropdown-item" href="#">Series actors</a></li>
+                <li><a class="dropdown-item" href="/project/series_mangas.php">Series Mangas</a></li>
             </ul>
-            
-
-            
         </div>
-        <form class="form-inline my-2 my-lg-0">
-            <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-            <!--  Icon search -->
-            <button class="btn btn-outline-success my-2 my-sm-0" type="submit"><i class="fas fa-search"></i></button>
-            
-        </form>
+
+        <div class="navbar-nav">
+        <a class="nav-link active" aria-current="page" href="/project/movies-series_actors.php">Actor</a>
+        <a class="nav-link active" aria-current="page" href="/project/form.php">Form movies</a>
+      </div>
+
         
 </nav>
 

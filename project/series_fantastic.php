@@ -12,7 +12,7 @@
                 $curl = curl_init();
 
                  // Get the list series fantastic
-                 curl_setopt($curl, CURLOPT_URL, 'https://api.themoviedb.org/3/search/person?query=Conor%20McGregor&include_adult=false&language=en-US&page=1');
+                 curl_setopt($curl, CURLOPT_URL, 'https://api.themoviedb.org/3/list/list_id?api_key=api_key&language=en-US');
 
                 // Avoid to display errors
                 curl_setopt($curl, CURLOPT_RETURNTRANSFER, true);
@@ -27,43 +27,23 @@
                 // Close the curl session
                 curl_close($curl);
 
-                // Decode the result
                 $resultat = json_decode($resultat, true);
-                $list = $resultat['results'];
-
+                $list = $resultat['items'];
 
                 // Browse the list array
                 foreach ($list as $key => $value) {
 
-                    // Display the data as a card
+                    // Display data as card
                     echo '<div class="card" style="width: 18rem;">
-                    <img src="https://image.tmdb.org/t/p/w500' . $value['profile_path'] . '" class="card-img-top" alt="...">
+                    <img src="https://image.tmdb.org/t/p/w500' . $value['poster_path'] . '" class="card-img-top" alt="...">
                     <div class="card-body">
-                        <h5 class="card-title">' . $value['name'] . '</h5>                         
+                        <h5 class="card-title
+                        ">' . $value['original_name'] . '</h5>
+                        <p class="card-text">' . $value['overview'] . '</p>
                         <a href="#" class="btn btn-primary">Go somewhere</a>
                     </div>
-                    
-
                 </div>';
-                // Get all movies from Conor Macgregor
-                echo '<p class=" card-text">' . $value['known_for_department'] . '</p>';
-                
-                $filmography = $value['known_for'];
-
-                // Loop through the movies and display their titles
-                foreach ($filmography as $entry) {
-                    if ($entry['media_type'] == 'movie') {
-                        $title = $entry['title'];
-                        echo '<div class="movie-title">' . $title . '</div>';
-                    } elseif ($entry['media_type'] == 'tv') {
-                        $name = $entry['name'];
-                        echo '<div class="tv-series-name">' . $name . '</div>';
-                    }
                 }
-                }
-            
-             
-
                 ?>
     </body>
 </html>

@@ -12,7 +12,7 @@
                 $curl = curl_init();
 
                  // Get the list movies
-                 curl_setopt($curl, CURLOPT_URL, 'https://api.themoviedb.org/3/list/{id_list-name_list}?api_key={api_key}&language=en-US');
+                 curl_setopt($curl, CURLOPT_URL, 'https://api.themoviedb.org/3/list/list_id?api_key=api_key&language=en-US');
                 //Evite d'afficher sur la page le résultat
                 curl_setopt($curl, CURLOPT_RETURNTRANSFER, true);
 
