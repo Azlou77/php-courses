@@ -1,6 +1,6 @@
 # php-courses
 project with curl :
-:warning: Do not display your api key or token access in your code :warning:
+⚠️ Do not display your api key or token access in your code ⚠️
 Image of the project php-courses/project/img
 * get data from an API movies: TMBD
 * display all movies to watch
