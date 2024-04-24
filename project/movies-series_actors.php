@@ -8,6 +8,15 @@
             <div class="col-12 d-flex justify-content-center">
                 <br>
                 <?php
+                require 'vendor/autoload.php';
+
+                // Load .env file
+                $dotenv = Dotenv\Dotenv::createImmutable(__DIR__);
+                $dotenv->load();
+                $dotenv->required(['TOKEN']);
+
+                $token = $_ENV['TOKEN'];
+
                 // initialise curl
                 $curl = curl_init();
 
@@ -18,7 +27,7 @@
                 curl_setopt($curl, CURLOPT_RETURNTRANSFER, true);
 
                 // Send the request
-                $authorization = "Authorization: Bearer {token}";
+                $authorization = "Authorization: Bearer $token";
                 curl_setopt($curl, CURLOPT_HTTPHEADER, array('Content-type: application /json', $authorization));
 
                 //Execute the curl session

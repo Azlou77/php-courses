@@ -8,17 +8,27 @@
             <div class="col">
                 <br>
                 <?php
+                require 'vendor/autoload.php';
+
+                // Load .env file
+                $dotenv = Dotenv\Dotenv::createImmutable(__DIR__);
+                $dotenv->load();
+                $dotenv->required(['LIST_ID_SERIES_FANTASTIC', 'TOKEN', 'API_KEY']);
+
+                $list_id_series_fantastic = $_ENV['LIST_ID_SERIES_FANTASTIC'];
+                $token = $_ENV['TOKEN'];
+                $api_key = $_ENV['API_KEY'];
+
                 // initialise curl
                 $curl = curl_init();
 
                  // Get the list series fantastic
-                 curl_setopt($curl, CURLOPT_URL, 'https://api.themoviedb.org/3/list/list_id?api_key=api_key&language=en-US');
-
+                 curl_setopt($curl, CURLOPT_URL, 'https://api.themoviedb.org/3/list/' . $list_id_series_fantastic . '?api_key=' . $api_key . '&language=en-US');
                 // Avoid to display errors
                 curl_setopt($curl, CURLOPT_RETURNTRANSFER, true);
 
                 // Send the request
-                $authorization = "Authorization: Bearer {token}";
+                $authorization = "Authorization: Bearer $token";
                 curl_setopt($curl, CURLOPT_HTTPHEADER, array('Content-type: application /json', $authorization));
 
                 //Execute the curl session

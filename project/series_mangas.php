@@ -8,17 +8,27 @@
             <div class="col">
                 <br>
                 <?php
+                require 'vendor/autoload.php';
+
+                // Load .env file
+                $dotenv = Dotenv\Dotenv::createImmutable(__DIR__);
+                $dotenv->load();
+                $dotenv->required(['LIST_ID_SERIES_MANGAS', 'TOKEN', 'API_KEY']);
+
+                $list_id_series_mangas = $_ENV['LIST_ID_SERIES_MANGAS'];
+                $token = $_ENV['TOKEN'];
+                $api_key = $_ENV['API_KEY'];
+
                 // initialise curl
                 $curl = curl_init();
 
                  // Get the list series mangas
-                 curl_setopt($curl, CURLOPT_URL, 'https://api.themoviedb.org/3/list/8297906-series-mangas?api_key=0080cd5b8653ef1b3b83fcda28fa12a4&language=en-US');
-                
+                 curl_setopt($curl, CURLOPT_URL, 'https://api.themoviedb.org/3/list/' . $list_id_series_mangas . '?api_key=' . $api_key . '&language=en-US');
                  // Avoid to display errors
                 curl_setopt($curl, CURLOPT_RETURNTRANSFER, true);
 
                 // Send request
-                $authorization = "Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiIwMDgwY2Q1Yjg2NTNlZjFiM2I4M2ZjZGEyOGZhMTJhNCIsInN1YiI6IjY0NmYwYjI2NzFmZmRmMDBhNzNiNTE0NiIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.gQxd-P77ykAfaQDOlAq8-NZQH0XDDo2lsC5xBVDHBdw";
+                $authorization = "Authorization: Bearer $token";
                 curl_setopt($curl, CURLOPT_HTTPHEADER, array('Content-type: application /json', $authorization));
 
                 // Execute request

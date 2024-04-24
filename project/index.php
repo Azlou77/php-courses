@@ -8,17 +8,28 @@
             <div class="col">
                 <br>
                 <?php
+                require 'vendor/autoload.php';
+                
+                // Load .env file
+                $dotenv = Dotenv\Dotenv::createImmutable(__DIR__);
+                $dotenv->load();
+                $dotenv->required(['ACCOUNT_ID', 'TOKEN']);
+
+                $account_id = $_ENV['ACCOUNT_ID'];
+                $token = $_ENV['TOKEN'];
+
+               
+             
                 //initialise curl
                 $curl = curl_init();
 
-                //Get the list series-movies to watch
-                curl_setopt($curl, CURLOPT_URL, 'https://api.themoviedb.org/3/account/account_id/favorite/movies?language=en-US&page=1&sort_by=created_at.asc');
-
+                //Get the list series-movies favorite
+                curl_setopt($curl, CURLOPT_URL, 'https://api.themoviedb.org/3/account/$account_id/favorite/movies?language=en-US&page=1&sort_by=created_at.asc');
                 // Avoid to display errors
                 curl_setopt($curl, CURLOPT_RETURNTRANSFER, true);
 
                 // Send request
-                $authorization = "Authorization: Bearer {token}";
+                $authorization = "Authorization: Bearer $token";
                 curl_setopt($curl, CURLOPT_HTTPHEADER, array('Content-type: application /json', $authorization));
 
                 // Execute request
