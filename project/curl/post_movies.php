@@ -2,7 +2,7 @@
 <body>
     <?php include 'partials/navigation.php'; ?>
     <div class="container center">
-    <h2 class="d-flex justify-content-center"> My series mangas </h2>
+    <h2 class="d-flex justify-content-center"> Form Post </h2>
     <div class="row">
         <div class="col">
             <br>
@@ -44,3 +44,5 @@
             }
 
             ?>
+</body>
+</html>

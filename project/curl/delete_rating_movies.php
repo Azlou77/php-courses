@@ -1,100 +1,56 @@
 <?php include 'partials/header.php'; ?>
-
 <body>
     <?php include 'partials/navigation.php'; ?>
     <div class="container center">
-        <h2 class="d-flex justify-content-center"> My fantastic movies </h2>
-        <div class="row">
-            <div class="col">
-                <br>
-                <?php
-                require 'vendor/autoload.php';
+    <h2 class="d-flex justify-content-center"> Form Delete </h2>
+    <div class="row">
+        <div class="col">
+            <br>
+            <?php
+            require 'vendor/autoload.php';
 
-                // Load .env file
-                $dotenv = Dotenv\Dotenv::createImmutable(__DIR__);
-                $dotenv->load();
-                $dotenv->required(['LIST_ID_FANTASTIC', 'TOKEN', 'API_KEY']);
+            // Load .env file
+            $dotenv = Dotenv\Dotenv::createImmutable(__DIR__);
+            $dotenv->load();
+            $dotenv->required([ 'TOKEN']);
 
-                $list_id = $_ENV['LIST_ID_FANTASTIC'];
-                $token = $_ENV['TOKEN'];
-                $api_key = $_ENV['API_KEY'];
+            // Variables
+            $token = $_ENV['TOKEN'];
+            $movie_id = $_POST['movie_id'];
 
+            $curl = curl_init();
 
-                // initialise curl
-                $curl = curl_init();
+            // CURL options
+            curl_setopt_array($curl, [
+            CURLOPT_URL => "https://api.themoviedb.org/3/movie/$movie_id/rating",
+            CURLOPT_RETURNTRANSFER => true,
+            CURLOPT_ENCODING => "",
+            CURLOPT_MAXREDIRS => 10,
+            CURLOPT_TIMEOUT => 30,
+            CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
+            CURLOPT_CUSTOMREQUEST => "DELETE",
+            CURLOPT_HTTPHEADER => [
+                "Authorization: Bearer $token",
+                "accept: application/json",
+                "content-type: application/json"
+            ],
+            ]);
 
-                // Get the list series fantastic
-                curl_setopt($curl, CURLOPT_URL, 'https://api.themoviedb.org/3/search/person?query=Conor%20McGregor&include_adult=false&language=en-US&page=1');
+            $response = curl_exec($curl);
+            $err = curl_error($curl);
 
-                // Avoid to display errors
-                curl_setopt($curl, CURLOPT_RETURNTRANSFER, true);
+            curl_close($curl);
 
-                // Send the request
-                $authorization = "Authorization: Bearer $token";
-                curl_setopt($curl, CURLOPT_HTTPHEADER, array('Content-type: application /json', $authorization));
+            if ($err) {
+            echo "cURL Error #:" . $err;
+            } else {
+            // Bootstrap alert
+                echo '<div class="alert alert-success" role="alert">
+                The item/record was deleted successfully.!
+                </div>';
 
-                //Execute the curl session
-                $resultat = curl_exec($curl);
+            }
 
-                // Close the curl session
-                curl_close($curl);
-
-                // Decode the result
-                $resultat = json_decode($resultat, true);
-                $list = $resultat['results'];
-
-
-                // Browse the list array
-                foreach ($list as $key => $value) {
-
-                    // Display the data as a card
-                    echo '
-                    <div class="card" style="width: 18rem;">
-                        <img src="https://image.tmdb.org/t/p/w500' . $value['profile_path'] . '" class="card-img-top" alt="...">
-                            <div class="card-body">
-                                <h5 class="d-flex justify-content-center card-title">' . $value['name'] . '</h5>                         
-                                <a href="#" class="btn btn-primary d-flex justify-content-center">Go somewhere</a>
-                            </div>
-                    </div>';
-                }
-                ?>
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-12 d-flex justify-content-center">
-                <?php
-                // Get the filmography of the actor
-                $filmography = $value['known_for'];
-
-                // Loop through the movies/series and display their titles
-                foreach ($filmography as $entry) {
-                    if ($entry['media_type'] == 'movie') {
-                        $title = $entry['title'];
-                        echo '
-                    <div class="card" style="width: 18rem;">
-                        <img src="https://image.tmdb.org/t/p/w500' . $entry['poster_path'] . '" class="card-img-top" alt="...">
-                        <div class="card-body">
-                            <h5 class="card-title d-flex justify-content-center">' . $title . '</h5>
-                            <p class="card-text">' . $entry['overview'] . '</p>
-                        </div>
-                    </div>';
-
-
-                    } elseif ($entry['media_type'] == 'tv') {
-                        $name = $entry['name'];
-                        echo '
-                        <div class="card" style="width: 18rem;">
-                            <img src="https://image.tmdb.org/t/p/w500' . $entry['poster_path'] . '" class="card-img-top" alt="...">
-                            <div class="card-body">
-                                <h5 class="card-title d-flex justify-content-center">' . $name . '</h5>
-                                <p class="card-text">' . $entry['overview'] . '</p>
-                            </div>
-                        </div>';
-                    }
-                }
-                ?>
-            </div>
-        </div>
+            ?>
 </body>
-
 </html>

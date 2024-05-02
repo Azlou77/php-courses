@@ -52,12 +52,14 @@
                         <h5 class="card-title
                         ">' . $value['original_title'] . '</h5>
                         <p class="card-text">' . $value['overview'] . '</p>
+                        <strong class="card-text"> Id film: </strong> ' . $value['id'] . '
+                        <br>
                         <strong class="card-text"> Vote moyen: </strong> ' . $value['vote_average'] . '
                         <br>
                         <strong class="card-text">Décompte des voix: </strong> ' . $value['vote_count'] . '
                         <br>
                         <strong class="card-text">Notations: </strong> ' . $value['rating'] . '
-                        
+                        <br>
                     </div>
                 </div>';
                 }

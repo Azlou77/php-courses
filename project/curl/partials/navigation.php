@@ -33,7 +33,7 @@
 
         <div class="navbar-nav">
         <a class="nav-link active" aria-current="page" href="/project/curl/movies-series_actors.php">Actor</a>
-        <a class="nav-link active" aria-current="page" href="/project/curl/form.php">Form movies</a>
+        <a class="nav-link active" aria-current="page" href="/project/curl/form.php">Form</a>
         <a class="nav-link active" aria-current="page" href="/project/curl/movies_rated.php">Rated movies</a>
       </div>
 

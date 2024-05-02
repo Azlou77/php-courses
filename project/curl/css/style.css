@@ -24,3 +24,8 @@ h5.card-title{
     text-align: center;
     font-weight: 600;
 }
+button.btn.btn-danger{
+    display: flex;
+    justify-content: centers;
+    margin-top: 20px;
+}
