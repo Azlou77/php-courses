@@ -12,8 +12,8 @@
                 Movies
             </button>
             <ul class="dropdown-menu">
-                <li><a class="dropdown-item" href="/project/movies_historic.php">Movies historic</a></li>
-                <li><a class="dropdown-item" href="/project/movies_fantastic.php">Movies fantastic</a></li>
+                <li><a class="dropdown-item" href="/project/curl/movies_historic.php">Movies historic</a></li>
+                <li><a class="dropdown-item" href="/project/curl/movies_fantastic.php">Movies fantastic</a></li>
                 <li><a class="dropdown-item" href="#">Movies actors</a></li>
 
             </ul>
@@ -26,14 +26,15 @@
                 Series
             </button>
             <ul class="dropdown-menu">
-                <li><a class="dropdown-item" href="/project/series_fantastic.php">Series fantastic</a></li>
-                <li><a class="dropdown-item" href="/project/series_mangas.php">Series Mangas</a></li>
+                <li><a class="dropdown-item" href="/project/curl/series_fantastic.php">Series fantastic</a></li>
+                <li><a class="dropdown-item" href="/project/curl/series_mangas.php">Series Mangas</a></li>
             </ul>
         </div>
 
         <div class="navbar-nav">
-        <a class="nav-link active" aria-current="page" href="/project/movies-series_actors.php">Actor</a>
-        <a class="nav-link active" aria-current="page" href="/project/form.php">Form movies</a>
+        <a class="nav-link active" aria-current="page" href="/project/curl/movies-series_actors.php">Actor</a>
+        <a class="nav-link active" aria-current="page" href="/project/curl/form.php">Form movies</a>
+        <a class="nav-link active" aria-current="page" href="/project/curl/movies_rated.php">Rated movies</a>
       </div>
 
         
