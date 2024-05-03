@@ -14,8 +14,6 @@
             <ul class="dropdown-menu">
                 <li><a class="dropdown-item" href="/project/curl/movies_historic.php">Movies historic</a></li>
                 <li><a class="dropdown-item" href="/project/curl/movies_fantastic.php">Movies fantastic</a></li>
-                <li><a class="dropdown-item" href="#">Movies actors</a></li>
-
             </ul>
             
         </div>
@@ -27,7 +25,7 @@
             </button>
             <ul class="dropdown-menu">
                 <li><a class="dropdown-item" href="/project/curl/series_fantastic.php">Series fantastic</a></li>
-                <li><a class="dropdown-item" href="/project/curl/series_mangas.php">Series Mangas</a></li>
+                <li><a class="dropdown-item" href="/project/curl/series_mangas.php">Series mangas</a></li>
             </ul>
         </div>
 

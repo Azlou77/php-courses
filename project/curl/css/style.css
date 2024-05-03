@@ -29,3 +29,7 @@ button.btn.btn-danger{
     justify-content: centers;
     margin-top: 20px;
 }
+/* Images project */
+span.sr-only{
+    color: black;
+}
