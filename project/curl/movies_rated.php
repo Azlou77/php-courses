@@ -3,21 +3,34 @@
     <body>
         <?php include 'partials/navigation.php'; ?>
         <div class="container center">
-        <h2 class="d-flex justify-content-center"> My historic movies </h2>
+        <h2 class="d-flex justify-content-center"> My rated movies </h2>
         <div class="row">
             <div class="col">
                 <br>
                 <?php
+                require 'vendor/autoload.php';
+
+                // Load .env file
+                $dotenv = Dotenv\Dotenv::createImmutable(__DIR__);
+                $dotenv->load();
+                $dotenv->required(['LIST_ID_HISTORIC', 'TOKEN', 'API_KEY']);
+
+
+                $account_id = $_ENV['ACCOUNT_ID'];
+                $token = $_ENV['TOKEN'];
+                $api_key = $_ENV['API_KEY'];
+
+
                 //initialisation de curl
-                $curl = curl_init();
+                $curl = curl_init();    
 
                  // Get the list movies
-                 curl_setopt($curl, CURLOPT_URL, 'https://api.themoviedb.org/3/list/list_id?api_key=api_key&language=en-US');
+                 curl_setopt($curl, CURLOPT_URL, 'https://api.themoviedb.org/3/account/$account_id/rated/movies?language=en-US&page=1&sort_by=created_at.asc');
                 //Evite d'afficher sur la page le résultat
                 curl_setopt($curl, CURLOPT_RETURNTRANSFER, true);
 
                 // Envoie la requête
-                $authorization = "Authorization: Bearer {token}";
+                $authorization = "Authorization: Bearer $token";
                 curl_setopt($curl, CURLOPT_HTTPHEADER, array('Content-type: application /json', $authorization));
 
                 //Execute la session cURL
@@ -27,7 +40,7 @@
                 curl_close($curl);
 
                 $resultat = json_decode($resultat, true);
-                $list = $resultat['items'];
+                $list = $resultat['results'];
 
                 // Parcours le tableau des listes
                 foreach ($list as $key => $value) {
@@ -39,7 +52,14 @@
                         <h5 class="card-title
                         ">' . $value['original_title'] . '</h5>
                         <p class="card-text">' . $value['overview'] . '</p>
-                        <a href="#" class="btn btn-primary">Go somewhere</a>
+                        <strong class="card-text"> Id film: </strong> ' . $value['id'] . '
+                        <br>
+                        <strong class="card-text"> Vote moyen: </strong> ' . $value['vote_average'] . '
+                        <br>
+                        <strong class="card-text">Décompte des voix: </strong> ' . $value['vote_count'] . '
+                        <br>
+                        <strong class="card-text">Notations: </strong> ' . $value['rating'] . '
+                        <br>
                     </div>
                 </div>';
                 }
