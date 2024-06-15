@@ -1,19 +1,36 @@
-# php-courses
-project with curl :
-📷 Image of the project **php-courses/project/img** 📷
+# Curl project
+📷 Image of the project php-courses/project/img 📷
 
-⚠️ Do not display your api key or token access in your code ⚠️
+ -   get data from an API movies: TMBD
+ -   display all movies to watch
+ -   display the movies historic, fantastic
+ -   display the series historic, mangas
+ -   display the best actors movies-series
+ -    form post movies to the personnal list view
+ -   form delete rating movies
 
-[Get env variable](https://www.cloudways.com/blog/php-libraries/#dotenv)
 
-`composer require vlucas/phpdotenv` to protect you sensitive data
 
-Image of the project php-courses/project/img
+### Requirement
+- PHP 8.1 or higher
+- composer 2.4 or higher
 
-* get data from an API movies: TMBD
-* display all movies to watch
-* display the movies historic, fantastic
-* display the series historic, mangas
-* display the best actors movies-series
-* form post movies to the personnal list view 
-* form delete rating movies
+
+### Installation
+
+#### Protect your sensitive data
+
+``composer require vlucas/phpdotenv``
+
+
+## Démarrage
+
+``php php-courses/project/curl/index.php``
+
+
+## Fabriqué avec
+_exemples :_
+* [PHP](https://www.php.net/) - Language back end
+* [TMBD](https://www.themoviedb.org//) - TMBD movies to make actions data
+
+
