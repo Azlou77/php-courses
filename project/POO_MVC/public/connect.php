@@ -21,10 +21,11 @@ $stmt = $conn->prepare("SELECT title, content  FROM exhibition");
 $stmt->execute();
 
 /* Loop the list until  the statement(SQL request) find the pair key/value in an array */
+$exhibitions = [];
+// We loop through the results
 while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
-    // Display the key of row, example $student["name"] = "Louis" or "Steven" etc ...
-    echo $row['title'] . "<br>";
-    echo $row['content'] . "<br>";
+    // We add the row to the exhibitions array
+    $exhibitions[] = $row;
 
 }
 ?>

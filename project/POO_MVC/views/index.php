@@ -54,14 +54,20 @@
     <!-- Get the data card: img, title, description with PHP and SQL functions 
       Function loop to get 3 times cards-->
 
-    <div class="card" style="width: 18rem;">
-        <img src="..." class="card-img-top" alt="...">
-        <div class="card-body">
-            <h5 class="card-title"><?php echo $row['title']?></h5>
-            <p class="card-text"></p>
-            <a href="#" class="btn btn-primary">View</a>
+    <?php foreach ($exhibitions as $exhibition) { ?>
+        <div class="card" style="width: 18rem;">
+            <img src="..." class="card-img-top" alt="...">
+            <div class="card-body">
+                <h5 class="card-title
+                "><?php echo $exhibition['title']; ?></h5>
+                <p class="card-text"><?php echo $exhibition['content']; ?></p>
+                <a href="#" class="btn btn-primary">Go somewhere</a>
+            </div>
         </div>
-    </div>
+    <?php } ?>
+    
+
+    
 
 
 </body>
