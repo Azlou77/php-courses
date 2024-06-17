@@ -54,22 +54,21 @@
     <!-- Get the data card: img, title, description with PHP and SQL functions 
       Function loop to get 3 times cards-->
 
+    <!-- We loop through the results -->
     <?php foreach ($exhibitions as $exhibition) { ?>
+        <!-- We add the row to the exhibitions array -->
         <div class="card" style="width: 18rem;">
-            <img src="..." class="card-img-top" alt="...">
+            
+           <!-- Display image with jpg format -->
+            <img src="img/<?php echo $exhibition['img'].'.jpg'; ?>" class="card-img-top" alt="<?php echo  $exhibition['img']; ?>">
             <div class="card-body">
-                <h5 class="card-title
-                "><?php echo $exhibition['title']; ?></h5>
+                <!-- We display the post content. -->
+                <h5 class="card-title"><?php echo $exhibition['title']; ?></h5>
                 <p class="card-text"><?php echo $exhibition['content']; ?></p>
                 <a href="#" class="btn btn-primary">Go somewhere</a>
             </div>
         </div>
     <?php } ?>
-    
-
-    
-
-
 </body>
 
 </html>

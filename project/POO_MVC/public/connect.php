@@ -15,17 +15,21 @@ try {
 
 // We retrieve only the last events
 // Prepare the request
-$stmt = $conn->prepare("SELECT title, content  FROM exhibition");
+$stmt = $conn->prepare("SELECT img, title, content  FROM exhibition");
 
 // Execute the request
 $stmt->execute();
 
 /* Loop the list until  the statement(SQL request) find the pair key/value in an array */
 $exhibitions = [];
+
+
 // We loop through the results
 while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
     // We add the row to the exhibitions array
     $exhibitions[] = $row;
+
+
 
 }
 ?>
