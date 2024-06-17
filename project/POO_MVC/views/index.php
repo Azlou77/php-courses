@@ -66,6 +66,8 @@
                 <h5 class="card-title"><?php echo $exhibition['title']; ?></h5>
                 <p class="card-text"><?php echo $exhibition['content']; ?></p>
                 <a href="#" class="btn btn-primary">Go somewhere</a>
+                <!-- Display the date -->
+                <p class="card-text"><small class="text-muted"><?php echo $exhibition['date']; ?></small></p>
             </div>
         </div>
     <?php } ?>

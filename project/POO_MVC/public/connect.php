@@ -14,9 +14,10 @@ try {
 }
 
 // We retrieve only the last events
-// Prepare the request
-$stmt = $conn->prepare("SELECT img, title, content  FROM exhibition");
 
+
+// Select elements from exhibitions where the date is between 01/06/2024 and 01/06/2025
+$stmt = $conn->prepare("SELECT img, title, content, DATE_FORMAT(date, '%d/%m/%Y') AS date FROM exhibition WHERE date BETWEEN '2024-06-01' AND '2025-06-01'");
 // Execute the request
 $stmt->execute();
 
