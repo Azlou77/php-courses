@@ -6,4 +6,3 @@ $exhibitions = getPosts();
 
 
 require('views/homepage.php');
-?>

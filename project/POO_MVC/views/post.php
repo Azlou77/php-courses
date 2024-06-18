@@ -19,6 +19,7 @@
 <body>
 
     <h1 class="d-flex justify-content-center">Bienvenue sur la billeterie sur les expositions d'histoire de France</h1>
+    <p><a href="index.php">Retour à la liste des billets</a></p>
 
     <!-- navigation -->
     <nav class="navbar navbar-expand-lg bg-body-tertiary">
@@ -51,28 +52,31 @@
 
     <?php include '../public/connect.php'; ?>
     <!-- main content -->
-    <!-- Get the data card: img, title, description with PHP and SQL functions 
-      Function loop to get 3 times cards-->
-      <div class="row">
-         <!-- We loop through the results -->
+    <div class="row">
+        <!-- We loop through the comments -->
         <?php
-        foreach ($exhibitions as $exhibition) {
+        foreach ($comments as $comment) {
         ?>
-            <div class="col-4">
-                <div class="card" style="width: 18rem;">
-                  <!-- Display image with jpg format -->
-                  <img src="img/<?= $exhibition['img'] . '.jpg'; ?>" class="card-img-top" alt="<?=  $exhibition['img']; ?>">
-                    <div class="card-body">
-                        <!-- We display the post content. -->
-                        <h5 class="card-title"><?= $exhibition['title']; ?></h5>
-                        <p class="card-text"><?=  $exhibition['content']; ?></p>
-                        <a href="#" class="btn btn-primary">Go somewhere</a>
-                        <!-- Display the date -->
-                        <p class="card-text"><small class="text-muted"><?= $exhibition['date']; ?></small></p>
+        <section style="background-color: #e7effd;">
+            <div class="col-md-11 col-lg-9 col-xl-7">
+                <div class="d-flex flex-start mb-4">
+                    <img class="rounded-circle shadow-1-strong me-3" src="img/<?= $comment['img'] . '.jpg'; ?>" alt="avatar" width="65" height="65" />
+                    <div class="card w-100">
+                        <div class="card-body p-4">
+                            <div class="">
+                                <h5> <?= $comment['author']; ?></h5>
+                                <p class="small"><?= $comment['date_comment']; ?></p>
+                                <p>
+                                    <?= $comment['content']; ?>
+                                </p>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
-        <?php } ?>
+        </section>
+    </div>
+<?php } ?>
 
 </body>
 

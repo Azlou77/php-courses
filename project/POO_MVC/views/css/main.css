@@ -28,12 +28,13 @@ span{
     font-family: stratos,sans-serif;
     font-size: 28px;
 }
-button{
+.display-block{
     background-color: #00ccbc;
     color: white;
     border: none;
     width: 119.867px;
     height: 48px;
     border-radius: 4px;
+    display:    block;
 }
 
