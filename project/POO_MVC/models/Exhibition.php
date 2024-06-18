@@ -1,6 +1,6 @@
 <?php
-
-// Database variables
+function getExhibitions(){
+    // Database variables
 $dbname="POO_MVC";
 $servername="localhost";
 $username="root";
@@ -8,10 +8,9 @@ $password="";
 try {
     // PDO connection
     $conn = new PDO('mysql:host='.$servername.';dbname='.$dbname, $username, $password);
-    $conn -> setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-    echo "Connected successfully";
-} catch (PDOException $e) {
-    echo "Connection failed: " . $e->getMessage();
+    $conn -> setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION); 
+} catch(Exception $e) {
+    die('Erreur : '.$e->getMessage());
 }
 
 // We retrieve only the last events
@@ -29,5 +28,8 @@ $exhibitions = [];
 while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
     // We add the row to the exhibitions array
     $exhibitions[] = $row;
+}
+// We return the exhibitions array
+return $exhibitions;
+}
 
-    }
