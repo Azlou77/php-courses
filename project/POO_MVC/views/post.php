@@ -50,11 +50,12 @@
         </div>
     </nav>
 
-    <?php include '../public/connect.php'; ?>
+    <?php include '../models/Comment.php'; ?>
     <!-- main content -->
     <div class="row">
         <!-- We loop through the comments -->
         <?php
+        $comments = getComments();
         foreach ($comments as $comment) {
         ?>
         <section style="background-color: #e7effd;">
@@ -65,7 +66,7 @@
                         <div class="card-body p-4">
                             <div class="">
                                 <h5> <?= $comment['author']; ?></h5>
-                                <p class="small"><?= $comment['date_comment']; ?></p>
+                                <p class="small"><?= $comment['comment_date']; ?></p>
                                 <p>
                                     <?= $comment['content']; ?>
                                 </p>
