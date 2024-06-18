@@ -8,3 +8,10 @@ h1{
 .navbar-expand-lg .navbar-nav{
     margin-left:35%;
 }
+
+/* cards */
+.card{
+  display: flex;
+  justify-content: center;
+  flex-direction: row;
+}

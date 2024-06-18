@@ -1,0 +1,39 @@
+.cart1{
+    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+    width: 23%;
+ 
+}
+.cart1 img{
+    width:  262px;
+    height: 147.367px;
+   
+}
+.cart1 h3{
+    font-family: plex-sans,sans-serif;
+    font-size: 16px;
+}
+span{
+    color: #4d7c1b;
+}
+
+.cart2{
+    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+    width: 29.38%;
+}
+.cart2 img{
+    width: 334px;
+    height: 334px;
+}
+.cart2 h3{
+    font-family: stratos,sans-serif;
+    font-size: 28px;
+}
+button{
+    background-color: #00ccbc;
+    color: white;
+    border: none;
+    width: 119.867px;
+    height: 48px;
+    border-radius: 4px;
+}
+
