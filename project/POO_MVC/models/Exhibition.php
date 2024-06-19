@@ -1,7 +1,7 @@
 <?php
 function getExhibitions(){
     // Database variables
-$dbname="POO_MVC";
+$dbname="POO";
 $servername="localhost";
 $username="root";
 $password="";

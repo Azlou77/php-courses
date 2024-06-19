@@ -1,10 +1,4 @@
 <?php
-require('models/Exhibition.php');
 
-// Access to function getExhibitions()
-$exhibitions = getExhibitions();
-
-
-// Display the homepage
-
-require('views/homepage.php');
+require_once('controllers/homepage.php');
+require_once('controllers/post.php');
