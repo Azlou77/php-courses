@@ -1,10 +1,10 @@
 <?php
 // controllers/homepage.php
 
-require_once('../models/Exhibition.php');
+require_once('app/model.php');
+function homepage()
+{
+	$exhibitions = getExhibitions();
 
-function homepage() {
-	$exhibitions= getExhibitions();
-
-	require('../views/homepage.php');
+	require_once('views/homepage.php');
 }

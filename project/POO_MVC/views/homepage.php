@@ -1,5 +1,5 @@
 <!-- main content -->
-<?php include '../models/Exhibition.php'; ?>
+<?php include 'models/Exhibition.php'; ?>
 <div class="row">
 	<!-- We display the title of the page -->->
 	<?php $title = "Exhibitions"; ?>

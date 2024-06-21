@@ -1,4 +1,7 @@
 <?php
 
-require_once('controllers/homepage.php');
-require_once('controllers/post.php');
+require('app/model.php');
+
+$exhibitions = getExhibitions();
+
+require('views/homepage.php');
