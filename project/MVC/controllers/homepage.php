@@ -1,12 +1,11 @@
 <?php
-// controllers/post.php
 
 require_once('app/model.php');
 
-
 function post(string $identifier)
 {
-    $exhibition = getExhibition($identifier);
+    $post = getPost($identifier);
     $comments = getComments($identifier);
-    require('../views/post.php');
+
+    require('views/post.php');
 }
